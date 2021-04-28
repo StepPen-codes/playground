@@ -8,7 +8,7 @@
 // GLOBAL VARIABLES //
 //////////////////////
 
-let game = new Battleship(5,4)
+let game = new Battleship(7,5)
 let map = []
 let round = 0
 let header = `Round#0 Make a guess.`
@@ -27,7 +27,7 @@ function newmap(){
   round=0
   game.newmap()
   while(size--){
-    map.push('.')
+    map.push('    ')
   }
 }
 function show(msg,arr){
@@ -59,12 +59,12 @@ function makeGuess(guess){
 }
 function hit(position){
   let sunk = game.hitShip(position)
-  map[position]='O'// When a ship is hit it will appear as an 'O'
+  map[position]=' O '// When a ship is hit it will appear as an 'O'
   note = "It's a HIT!!!"
   return !game.checkShip(sunk)?sunkShip(sunk):false
 }
 function miss(position){
-  map[position]='X'// When a ship is missed guess will appear as an 'X'
+  map[position]=' X '// When a ship is missed guess will appear as an 'X'
   note = "It's a miss!"
   return false
 }
@@ -87,7 +87,8 @@ function init(){
     A:3, // ID:size
     B:2,
     C:4,
-    D:1
+    D:1,
+    E:5
   })
 }
 function startGame(){
