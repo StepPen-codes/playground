@@ -52,12 +52,12 @@ function makeGuess(guess){
 }
 function hit(position){
   let sunk = game.hitShip(position)
-  map[position]=' O '// When a ship is hit it will appear as an 'O'
+  map[position]=' O'// When a ship is hit it will appear as an 'O'
   note = "It's a HIT!!!"
   return !game.checkShip(sunk)?sunkShip(sunk):false
 }
 function miss(position){
-  map[position]=' X '// When a ship is missed guess will appear as an 'X'
+  map[position]=' X'// When a ship is missed guess will appear as an 'X'
   note = "It's a miss!"
   return false
 }
