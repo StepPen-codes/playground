@@ -10,9 +10,7 @@
 
 let game = new Battleship(7,5)
 let map = []
-let round = 0
-let header = `Round#0 Make a guess.`
-let footer = `Enter a number ( 0 - ${game.size-1} )`
+let round = 1
 let note = ''
 let moves = []
 
@@ -24,10 +22,10 @@ function newmap(){
   let size=game.size
   map=[]
   moves=[]
-  round=0
+  round=1
   game.newmap()
   while(size--){
-    map.push('    ')
+    map.push(' _ ')
   }
 }
 function show(msg,arr){
@@ -54,6 +52,7 @@ function makeGuess(guess){
     moves.push(guess)
     if(game.checkPosition(guess)) ret = hit(guess)
     else miss(guess)
+    round++
   }
   return ret
 }
@@ -98,7 +97,7 @@ function startGame(){
   if(game.ships.length<1) alert('You successfully sunk all the ships!!!')
 }
 function promptMSG(){
-  return `\n\nnote:Type 'exit' to stop\n\nRound#${round} ${show(note,map)}\nPick a number from 0 to ${game.size-1}`
+  return `note:Type 'exit' to stop\nRound#${round} ${show(note,map)}Pick a number from 0 to ${game.size-1}`
 }
 
 ////////////////
