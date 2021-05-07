@@ -1,26 +1,19 @@
-class dropDown{
-    #dataset = []
-  dropDown(element, events=undefined){
-    this.node = element
-    this.events = events
-    if (events != undefined && typeof this.events === 'object')
-      for (let e of this.events) 
-        this.node.addEventListener(e, 
-          function(event){
-            this.events[e](this.#dataset)
-          })
-  }
-  get dataset(){
-    return this.#dataset
-  }
-  push(data){
-    if (Array.isArray(data))
-      for (let item of data)
-        this.#dataset.push(item)
-    else
-      this.#dataset.push(data)
-  }
-  clear(){
-    this.#dataset = []
+class dropDown extends HTMLElement{
+  #template = document.createElement('template')  
+  constructor(){
+    super()
+    
+    this.#template.innerHTML = 
+      `<style>
+        
+      </style>
+      <input type='text'><div class="menu"></div>`
+    
+    this.attachShadow({mode: 'open'})
+    this.shadowRoot.appendChild(this.#template.content.cloneNode(true))
+    if (this.hasAttribute('placeholder'))
+      this.shadowRoot.querySelector('input').setAttribute('placeholder', this.getAttribute('placeholder'))
   }
 }
+
+window.customElements.define('drop-down', dropDown) 
