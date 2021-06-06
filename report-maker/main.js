@@ -29,7 +29,7 @@ function toTime(str) {
         .replace('nn', nn)
 }
 function emmet(str) {
-    let ret = str.replace(/@dc\.@(\d){1,4}(\.\d+){3}\.(true|false)/gi, function (x) {
+    return str.toString().replace(/@dc\.@(\d){1,4}(\.\d+){3}\.(true|false)/gi, function (x) {
         let dc = x.split('.')
         return template.dc.toString().replace(/tt/g, dc[1])
             .replace('cc', dc[2])
@@ -53,7 +53,6 @@ function emmet(str) {
     }).replace(/amazon|sfdc|omni|vpn/gi, function (x) {
         return x.toUpperCase()
     })
-    return ret
 }
 
 let paper = document.querySelector('.paper')
