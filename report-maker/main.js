@@ -29,7 +29,7 @@ function toTime(str) {
         .replace('nn', nn)
 }
 function emmet(str) {
-    let ret = str.replace(/@dc.@12.12345.54321.51423.true/, function (x) {
+    let ret = str.replace(/@dc\.@(\d){1,4}(\.\d+){3}\.(true|false)/gi, function (x) {
         let dc = x.split('.')
         return template.dc.toString().replace(/tt/g, dc[1])
             .replace('cc', dc[2])
