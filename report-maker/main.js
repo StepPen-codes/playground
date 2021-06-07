@@ -49,10 +49,10 @@ function emmet(str) {
         let dd = x.match(/(?<=d).+(?=u)/gi)[0]
         let uu = x.match(/(?<=u).+/gi)[0]
         return template.speedTest.toString().replace('dd', dd.replace(',', ' '))
-            .replace('uu', dd.replace(',', ' '))
-    }).replace(/amazon|sfdc|omni|vpn/gi, function (x) {
+            .replace('uu', uu.replace(',', ' '))
+    })/*.replace(/amazon|sfdc|omni|vpn/gi, function (x) {
         return x.toUpperCase()
-    })
+    })*/
 }
 
 let paper = document.querySelector('.paper')
