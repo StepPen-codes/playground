@@ -62,7 +62,7 @@ function emmet(str,ws){
                                    .replace('cc',dc[2])
                                    .replace('rr',dc[3])
                                    .replace('aa',dc[4])
-                                   .replace('note',Boolean(dc[5])?'I called immediately and assisted the cx - resolved':'I called immediately and left a voice mail - unresolved')+'█'
+                                   .replace('note',dc[5].toLowerCase()=='true'?'I called immediately and assisted the cx - resolved':'I called immediately and left a voice mail - unresolved')+'█'
     }).replace(/@err(@\d+(p|a)?){2}#\d+/gi,function (x) {
       let tt=x.match(/@\d+(p|a)?/gi)
       let rr=x.match(/(?<=#)\d+/)[0]
