@@ -55,7 +55,7 @@ function toTime(str){
 }
 
 function emmet(str,ws){
-  let ret = str.replace(/@dc.@12.12345.54321.51423.true/,function (x) {
+  let ret = str.replace(/@dc@\d{1,4}(.\d+){3}.(true|false)/,function (x) {
       let dc = x.split('.')
       replaced = true
       return template.dc.toString().replace(/tt/g,dc[1])
