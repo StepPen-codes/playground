@@ -79,7 +79,7 @@ function emmet(str,ws){
       let dd=x.match(/(?<=d).+(?=u)/gi)[0]
       let uu=x.match(/(?<=u).+/gi)[0]
       return template.speedTest.toString().replace('dd',dd.replace(',',' '))
-                                        .replace('uu',dd.replace(',',' '))+'█'
+                                        .replace('uu',uu.replace(',',' '))+'█'
     }).replace(/amazon|sfdc|omni|vpn/gi,function (x) {
       let ret=x.toUpperCase()
       if (x!=ret){
