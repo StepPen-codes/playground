@@ -19,7 +19,7 @@ paper.addEventListener('keyup',function(e) {
     if(replaced && (e.code == 'Space' || e.code == 'Enter')){
       let pos = 0
       pos = str.lastIndexOf('█')
-      e.target.value=str.replace('█',ws)
+      e.target.value=str.replace(/█/g,ws)
       setCaretPosition(paper,pos+1 * (pos >= 0))
     }
     replaced=false
