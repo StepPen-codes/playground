@@ -81,8 +81,12 @@ function emmet(str,ws){
       return template.speedTest.toString().replace('dd',dd.replace(',',' '))
                                         .replace('uu',dd.replace(',',' '))+'█'
     }).replace(/amazon|sfdc|omni|vpn/gi,function (x) {
-      replaced = true
-      return x.toUpperCase()+'█'
+      let ret=x.toUpperCase()
+      if (x!=ret){
+        replaced = true
+        ret=x.toUpperCase()
+      }
+      return ret
     })
   return ret
 }
