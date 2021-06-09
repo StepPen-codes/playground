@@ -1,9 +1,9 @@
 const paper = document.querySelector('.paper')
 const template = {
   time:'hh:mm nn',
-  dc:`Disconnected Call:\nTime DC: tt\nCase#: cc\nRef#: rr\nACOC - aa\nCalled back tt\nResolution: note`,
+  dc:`Disconnected Call:\n\nTime DC: ttCase#: cc\nRef#: rr\nACOC - aa\nCalled back tt\nResolution: note`,
   speedTest:'Speed Test:\nDownload dd\nUpload uu',
-  error:'Error\n\n\n\nTime Start: t1\nTime End: t2\n\n\n\nReference# rr'
+  error:'ERROR: \n\n\n\nTime Start: t1Time End: t2\n\n\n\nReference# rr\n\nResolution'
 }
 let replaced = false
 
@@ -84,7 +84,7 @@ function emmet(str,ws){
       let ret=x.toUpperCase()
       if (x!=ret){
         replaced = true
-        ret=x.toUpperCase()
+        ret=x.toUpperCase()+'█'
       }
       return ret
     })
