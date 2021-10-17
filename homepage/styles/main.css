@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+:root {
+  --Cl1: #e7e8e3;
+  --Cd1: #2c3e50;
+  --Ca1: #3498db;
+  --Cm1: #95a5a6;
+  --col: repeat(2, 1fr);
+  --font: 1em "Montserrat", sans-serif;
+}
+body {
+  font: var(--font);
+  margin: 0;
+  background: var(--Cl1);
+}
+
+nav {
+  position: fixed;
+  top: 2em;
+  left: 3em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  font-size: 0.8rem;
+  color: var(--Cm1);
+  cursor: pointer;
+}
+.inactive {
+  visibility: hidden;
+}
+.tab {
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  background: #0000;
+}
+#veil {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 100;
+}
+#menu {
+  display: grid;
+  grid-template-columns: var(--col);
+  gap: 24px;
+}
+.bookmark {
+  position: relative;
+  top: 0;
+  height: 48px;
+  width: 48px;
+  border-radius: 24px;
+  transition: transform 0.1s ease, box-shadow 0.15s ease;
+}
+.bookmark img {
+  transition: transform 0.1s ease;
+}
+.bookmark:hover img {
+  transform: scale(150%);
+}
+.bookmark:hover {
+  box-shadow: 0 0 0 25px #2c3e50;
+  transform: scale(80%);
+  z-index: 100;
+}
+
+#editor {
+  box-sizing: border-box;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px 2px #0005;
+  padding: 16px;
+  height: 192px;
+  min-width: 480px;
+  resize: none;
+  background: var(--Cd1);
+  z-index: 1000;
+}
+.inactive {
+  display: none;
+}
+#editor textarea {
+  font: 0.7em "lucida console";
+  tab-size: 2;
+  line-height: 1.5em;
+  background: #0000;
+  color: var(--Cl1);
+  padding: 0;
+  border: 0;
+  outline: 0;
+  height: 100%;
+  width: 100%;
+  resize: none;
+}
+#editor textarea::-webkit-scrollbar {
+  display: none;
+}
+#toggle {
+  position: fixed;
+  top: 2rem;
+  right: 4rem;
+  border: 0;
+  background: var(--Cl1);
+  color: var(--Cd1);
+  border-radius: 2em;
+  font: inherit;
+  font-size: 0.8rem;
+  transform: translate(50%, -50%);
+  transition: background 0.2s, color 0.3s ease, padding 0.2s ease-out;
+  z-index: 1000;
+}
+#toggle:hover {
+  background: var(--Cd1);
+  color: var(--Cl1);
+  padding: 0.5em 1.5em;
+}
